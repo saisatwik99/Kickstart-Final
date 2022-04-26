@@ -1,44 +1,59 @@
 {
   "name": "kickstart",
-  "version": "1.0.0",
-  "description": "",
-  "main": "app.js",
-  "engines": {
-    "node": "16.x"
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@owaiswiz/use-in-view": "^1.0.16",
+    "@themesberg/tailwind-datepicker": "^1.1.0",
+    "axios": "^0.24.0",
+    "dotenv": "^8.2.0",
+    "feather-icons": "^4.28.0",
+    "framer-motion": "^4.1.5",
+    "jsonwebtoken": "^8.5.1",
+    "react": "^17.0.2",
+    "react-async": "^10.0.1",
+    "react-dom": "^17.0.2",
+    "react-is": "^18.0.0",
+    "react-modal": "^3.13.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^3.4.4",
+    "react-slick": "^0.28.1",
+    "server": "^1.0.37",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^5.2.3",
+    "tailwindcss": "^2.1.1",
+    "twin.macro": "^2.3.3"
   },
   "scripts": {
-    "start": "node index.js",
-    "dev": "nodemon index.js"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && netlify deploy --prod --dir=build"
   },
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@trycourier/courier": "^3.2.0",
-    "assert": "^2.0.0",
-    "bcryptjs": "^2.4.3",
-    "body-parser": "^1.19.1",
-    "chai": "^4.3.6",
-    "chai-http": "^4.3.0",
-    "cloudinary": "^1.29.0",
-    "connect-mongodb-session": "^3.1.1",
-    "cors": "^2.8.5",
-    "datauri": "^4.1.0",
-    "dotenv": "^10.0.0",
-    "eslint": "^8.4.1",
-    "express": "^4.17.1",
-    "express-session": "^1.17.2",
-    "joi": "^17.5.0",
-    "jsonwebtoken": "^8.5.1",
-    "method-override": "^3.0.0",
-    "mocha": "^9.2.2",
-    "mongoose": "^6.1.2",
-    "morgan": "^1.10.0",
-    "multer": "^1.4.4",
-    "multer-storage-cloudinary": "^4.0.0",
-    "nodemailer": "^6.7.2",
-    "nodemon": "^2.0.15",
-    "redis": "^4.0.6",
-    "swagger-ui-express": "^4.3.0",
-    "yamljs": "^0.3.0"
+  "eslintConfig": {
+    "extends": "react-app",
+    "overrides": [
+      {
+        "files": [
+          "src/**/*.js"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

@@ -259,7 +259,7 @@ exports.postBook = async (req, res) => {
         return res.send({ message: "We are available bewteen 8:00AM to 8:00PM. Please select other time!", red: 1});
     const info = jwt.decode(token);
     const courier = CourierClient({ authorizationToken: "pk_prod_3J3MVG89KD4R68NB3V2PJSKYPCXB" });
-    const ampm = 'AM';
+    let ampm = 'AM';
     if (req.body.ampm == 1)
         ampm = 'PM';
     const time = `${req.body.hour}:${req.body.min} ${ampm}`

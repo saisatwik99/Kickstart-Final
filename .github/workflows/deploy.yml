@@ -1,0 +1,42 @@
+name: Deploy to VM Instance
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  test:
+    name: testing code
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [14.x]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies & run tests
+        run: |
+          cd server
+          npm ci
+  build:
+    name: Deploy to VM Instance
+    runs-on: ubuntu-latest
+    steps:
+    - name: ssh into machine, clone repo
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: ${{ secrets.PORT }}
+        script: |
+                cd code/Kickstart-Final
+                git pull origin main
+                sudo docker-compose down
+                sudo docker-compose up --build -d
+                sudo systemctl restart nginx
