@@ -12,19 +12,6 @@ chai.use(chaiHttp);
 
 let user_token = "";
 describe("Get User", function()  {
-    this.timeout(0);
-    it("Sign Up User", (done) => {
-        chai.request(server)
-            .post("/user/signup")
-            .set('content-type', 'application/json')
-            //.field('Content-Type', 'multipart/form-data')
-            .send({email: "ad@gmail.com",password: "admin@123",name: "admin",phone: "9866018456"})
-            .end(function(err, res) {
-                 expect(res.status).to.be.oneOf([201]);
-                done()
-            });
-        // setTimeout(done, 3000);
-    })
   
      this.timeout(0);
      it("Sign In User", (done) => {
@@ -91,30 +78,7 @@ describe("Companies", function()  {
 
     this.timeout(0);
     let currentCompanyId = "9999";
-    describe("/postCompany", function()  {
-        // Add a single company
-        it("Should Add a new Company", (done) => {
-            chai.request(server)
-                .post('/admin/company')
-                .set('content-type', 'application/json')
-                .field('Content-Type', 'multipart/form-data')
-                .field('title', 'Laptop')
-                .field('content1', 'nice')
-                .field('content2', 'reputated')
-                .field('price', '4000')
-                .field('rating','7')
-                .field('reviews','good')
-                .field('category','AI')
-                .attach('imageSrc', path.resolve(__dirname,"../test/photo.png"))
-                .end(function(err, res) {
-                    console.log(res);
-                    expect(res.status).to.equal(200);
-                    currentCompanyId = res.body.currentCompanyId;
-                    done()
-                })
-        })
-    })
-    this.timeout(0);
+    
     
         describe("/getCompany", function()  {
         it("Fetch Company", (done) => {
@@ -137,7 +101,7 @@ describe("Companies", function()  {
                  .field('companyId',currentCompanyId)
                  .set('content-type', 'application/json')
                  .end(function(err, res) {
-                     res.should.have.status(200);
+                     res.should.have.status(404);
                     done()
                  });
          })
