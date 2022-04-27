@@ -105,7 +105,7 @@ describe("Companies", function()  {
                 .field('rating','7')
                 .field('reviews','good')
                 .field('category','AI')
-                .attach('imageSrc', path.resolve(__dirname,"../photo.jpg"))
+                .attach('imageSrc', path.resolve(__dirname,"../test/photo.png"))
                 .end(function(err, res) {
                     console.log(res);
                     expect(res.status).to.equal(200);
