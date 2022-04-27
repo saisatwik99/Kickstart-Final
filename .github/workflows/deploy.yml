@@ -23,6 +23,7 @@ jobs:
         run: |
           cd server
           npm ci
+          npm run test
   build:
     name: Deploy to VM Instance
     runs-on: ubuntu-latest
