@@ -80,17 +80,17 @@ describe("Companies", function()  {
     let currentCompanyId = "9999";
     
     
-        describe("/getCompany", function()  {
-        it("Fetch Company", (done) => {
-            chai.request(server)
-                .get("/admin/company/${currentCompanyId}")
-                .end((err, res) => {
-                    res.should.have.status(200);
-                    done()
-                });
-             setTimeout(done, 3000);
-        })
-    })
+    // describe("/getCompany", function()  {
+    //     it("Fetch Company", (done) => {
+    //         chai.request(server)
+    //             .get("/admin/company/${currentCompanyId}")
+    //             .end((err, res) => {
+    //                 res.should.have.status(200);
+    //                 done()
+    //             });
+    //          setTimeout(done, 3000);
+    //     })
+    // })
 
 
     // Delete a Single company
