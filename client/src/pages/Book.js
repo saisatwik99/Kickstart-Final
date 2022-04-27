@@ -124,7 +124,7 @@ export default function Book({
                 </AlertContainerRed>
                 }
                 <Input type="text" placeholder="Full Name" onChange={e => setName(e.target.value)}/>
-                <Input type="date" min="2022-04-27" placeholder="Select date" onChange={e => setDate(e.target.value)}/>
+                <Input type="date" min="2022-04-28" placeholder="Select date" onChange={e => setDate(e.target.value)}/>
                 <TimeInput type="select" placeholder="HH" onChange={e => setHour(e.target.value)}>
                   {
                     hour.map((a) => (
