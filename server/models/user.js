@@ -21,4 +21,6 @@ const userSchema = new Schema({
   
 });
 
+userSchema.createIndex({"email": 1});
+
 module.exports = mongoose.model('User', userSchema);

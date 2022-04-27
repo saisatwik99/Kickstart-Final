@@ -107,7 +107,7 @@ exports.getCompany = async (req, res) => {
         result.AI = await Company.find({category: 'AI'});
         result.Food = await Company.find({category: 'Food'});
         result.EdTech = await Company.find({category: 'EdTech'});
-        await client.set("company", JSON.stringify(result));
+        await client.set("company", JSON.stringify(result)); // set redis
         console.log("Data fetched from DB");
         return res.json(result);
     } else {
