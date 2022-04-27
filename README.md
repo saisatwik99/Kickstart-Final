@@ -22,71 +22,36 @@ No hassle. Total anonymity.
 
 ### Built With
 
-* [React.js](https://reactjs.org/)
-* [Tailwindcss](https://tailwindcss.com/)
-* [Nodejs](https://nodejs.org/en/)
-* [Expressjs](https://expressjs.com/)
-* [MongoDB](https://www.mongodb.com/)
+* [React.js]
+* [Tailwindcss]
+* [Nodejs]
+* [Expressjs]
+* [MongoDB]
+* [Redis]
+* [Microsoft Azure]
+* [Github Actions]
 
 ### Project Link's
 
-* [Frontend](https://github.com/saisatwik99/kickstart)
-* [Backend](https://github.com/saisatwik99/Kickstart-Backend)
-* [Frontend Deployed Link](https://travel-saisatwik99.vercel.app/)
-* [Backend Deployed Link](https://kickstart-backend.herokuapp.com)
-* [Swagger Link](https://kickstart-backend.herokuapp.com/apidocs/)
+* [Application Link](http://deployment-wbd.northcentralus.cloudapp.azure.com/)
+* [Swagger Link](http://deployment-wbd.northcentralus.cloudapp.azure.com/apidocs/)
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
 
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
-* node
-  ```sh
-  sudo apt install nodejs
-  ```
-
 ### Installation
 
-To Start Backend server
+To Start Docker Network
 
-1. Change the directory to Kickstart-Backend
+1. Start the Docker Network
    ```sh
-   cd Kickstart-Backend
+   docker-compose up
    ```
-2. Install NPM packages
-   ```sh
-   npm install
-   ```
-3. Create a .env file and put
-   ```sh
-   PORT = 5000
-   ```
-4. Start the Backend Server
-   ```sh
-   npm run dev
-   ```
-5. Now you can see a message in terminal as "Server Started"
+2. Now you can see a message in terminal as "Server Started"
+3. To check if everything is working correctly "http://localhost:5000/healthcheck"
 
-6. To Start Frontend Server, Change your directory to Kickstart-Frontend-Server
-   ```sh
-   cd Kickstart-Frontend
-   ```
-7. Install NPM packages
-   ```sh
-   npm install
-   ```
-8. Start the server
-   ```sh
-   npm start
-   ```
-9. Make sure that both the servers are running
-10. Now you are good to go!
+4. Now you see "OK" message 
+5. Application serves at "http://localhost:5000"
 
