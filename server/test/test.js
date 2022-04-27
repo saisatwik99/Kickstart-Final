@@ -76,7 +76,6 @@ describe("Companies", function()  {
         })
     })
 
-    this.timeout(0);
     let currentCompanyId = "9999";
     
     
